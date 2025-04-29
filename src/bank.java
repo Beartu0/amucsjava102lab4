@@ -1,19 +1,19 @@
 public class bank {
-    private static int customerid;
-    private static String firstname;
-    private static String lastname;
-    private static String email;
-    private static String accountype;
-    private static int phonenumber;
-    private static int accountnumber;
-    private static double balance;
+    private  int customerid;
+    private  String firstname;
+    private  String lastname;
+    private  String email;
+    private  String accountype;
+    private  int phonenumber;
+    private  int accountnumber;
+    private  double balance;
     
 
     private bank (){
         this.customerid=0;
-        this.firstname="name";
-        this.lastname="lastname";
-        this.email="email";
+        this.firstname="lorem ipsum dolor";
+        this.lastname="lorem ipsum dolor";
+        this.email="lorem ipsum dolor";
         this.phonenumber=00;
         this.accountnumber=00;
         this.balance=00;
@@ -36,13 +36,14 @@ public class bank {
         this.accountnumber=other.accountnumber;
         this.balance=other.balance;
     }
-    private String tostring() {
+    
+    public String tostring() {
         return ("customerid"+this.customerid+"firstname"+this.firstname+"lastname"+this.lastname+"email"+this.email+"phone number"+this.phonenumber+"accountnumber"+this.accountnumber+"account type"+this.accountype+"balance"+this.balance);
     }
 
-
-    private boolean equals (bank other){return (this.customerid==other.customerid);}
-    private void deposit (double addition){
+    
+    public boolean equal (bank other){return (this.customerid==other.customerid&&this.firstname.equals(other.firstname)&&this.lastname.equals(other.lastname)&&this.accountnumber==other.accountnumber&&this.email.equals(other.email));}
+    public void deposit (double addition){
         if (addition>0){
             this.balance=this.balance+addition;
             System.out.println("deposit succesful. your new balance"+this.balance);
@@ -50,7 +51,7 @@ public class bank {
         else 
             System.out.println("insufficent deposit amount");
     }
-    private void withdraw(double withdraw){
+    public void withdraw(double withdraw){
         if (withdraw>0 && withdraw>=this.balance){
             this.balance=this.balance-withdraw;
             System.out.println("withdraw succesful. your new balance"+this.balance);
@@ -63,16 +64,16 @@ public class bank {
     public String getfirstname() { return firstname; }
     public String getlastname() { return lastname; }
     public String getemail() { return email; }
-    public String getphonenumber() { return phonenumber; }
+    public int getphonenumber() { return phonenumber; }
     public String getaccountype() { return accountype; }
     public double getbalance() { return balance; }
 
-    public void setcustomerId(int customerId) { this.customerId = customerId; }
-    public void setfirstName(String firstName) { this.firstName = firstName; }
-    public void setlastName(String lastName) { this.lastName = lastName; }
+    public void setcustomerId(int customerId) { this.customerid = customerId; }
+    public void setfirstName(String firstName) {this.firstname = firstName; }
+    public void setlastName(String lastName) { this.lastname = lastName; }
     public void setemail(String email) { this.email = email; }
-    public void setphoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
-    public void setaccountType(String accountType) { this.accountType = accountType; }
+    public void setphoneNumber(int phoneNumber) { this.phonenumber = phoneNumber; }
+    public void setaccountType(String accountType) { this.accountype = accountType; }
     public void setbalance(double balance) { this.balance = balance; }
 
 
